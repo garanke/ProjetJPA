@@ -1,0 +1,30 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+   version="1.0">
+   <persistence-unit name="myConfig" transaction-type="RESOURCE_LOCAL">
+  <provider>org.hibernate.ejb.HibernatePersistence</provider> 
+      <class>monpkg.entities.Person</class>
+      <properties>
+         <!-- pour voir les requetes SQL -->
+         <property name="hibernate.show_sql" value="true" />
+         <property name="hibernate.format_sql" value="true" />
+
+         <!-- parametres de connection JDBC -->
+         <property name="hibernate.connection.driver_class"
+            value="com.mysql.jdbc.Driver" />
+         <property name="hibernate.connection.url"
+            value="jdbc:mysql://localhost/dbessai" />
+         <property name="hibernate.connection.username"
+            value="barry" />
+         <property name="hibernate.connection.password"
+            value="password" />
+         <property name="hibernate.dialect"
+            value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+         <property name="hibernate.hbm2ddl.auto"
+            value="create-drop" />
+        <property name="hibernate.max_fetch_depth" value="3"/
+      </properties>
+   </persistence-unit>
+</persistence>
